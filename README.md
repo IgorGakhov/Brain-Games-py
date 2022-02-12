@@ -10,7 +10,7 @@
 make build
 make package-install
 ```
-[![asciicast](https://asciinema.org/a/468616.svg)](https://asciinema.org/a/468616)
+[![asciicast](https://asciinema.org/a/XfptNK9U74OhzxnM7xLAPDCRN.svg)](https://asciinema.org/a/XfptNK9U74OhzxnM7xLAPDCRN)
 
 + Brain even:
 `brain-even`
