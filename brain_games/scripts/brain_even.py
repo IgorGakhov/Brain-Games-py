@@ -15,6 +15,18 @@ Let\'s try again, {}!'''
 VICTORY_GAME_MESSAGE = 'Congratulations, {}!'
 
 
+def true_answer(game_round, name):
+    print(TRUE_ANSWER)
+    if game_round == GAME_ATTEMPTS + 1:
+        print(VICTORY_GAME_MESSAGE.format(name))
+    return True
+
+
+def false_answer(name):
+    print(FALSE_ANSWER_NO.format(name))
+    return False
+
+
 def even_game(name):
 
     print(GAME_RULES)
@@ -26,33 +38,19 @@ def even_game(name):
         print('Question: {}'.format(str(random_number)))
         answer = prompt.string('Your answer: ')
 
-        # Исход события - True, ответ - True
-        if random_number % 2 == 0 and answer == 'yes':
-            answer = True
-            print(TRUE_ANSWER)
-            game_round += 1
-            if game_round == GAME_ATTEMPTS + 1:
-                print(VICTORY_GAME_MESSAGE.format(name))
+        even = random_number % 2 == 0
 
+        # Исход события - True, ответ - True
         # Исход события - False, ответ - True
-        elif random_number % 2 != 0 and answer == 'no':
-            answer = True
-            print(TRUE_ANSWER)
-            game_round += 1
-            if game_round == GAME_ATTEMPTS + 1:
-                print(VICTORY_GAME_MESSAGE.format(name))
+        if (even and answer == 'yes') or (not even and answer == 'no'):
+            answer = true_answer(game_round, name)
 
         # Исход события - True, ответ - False
-        elif random_number % 2 == 0 and answer != 'yes':
-            answer = False
-            print(FALSE_ANSWER_NO.format(name))
-            game_round += 1
-
         # Исход события - False, ответ - False
-        elif random_number % 2 != 0 and answer != 'no':
-            answer = False
-            print(FALSE_ANSWER_YES.format(name))
-            game_round += 1
+        elif (even and answer != 'yes') or (not even and answer != 'no'):
+            answer = false_answer(name)
+
+        game_round += 1
 
 
 def main():
