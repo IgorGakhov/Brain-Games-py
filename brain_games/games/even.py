@@ -18,7 +18,7 @@ VICTORY_GAME_MESSAGE = 'Congratulations, {}!'
 def answer_is_correct(random_number, user_answer):
     # Определяем, четное ли число
     even = random_number % 2 == 0
-    
+
     # Определяем правильный ответ
 
     # Исход события - True, ответ - True
@@ -30,7 +30,7 @@ def answer_is_correct(random_number, user_answer):
     # Исход события - False, ответ - False
     elif (even and user_answer != 'yes') or (not even and user_answer != 'no'):
         bool_result = False
-    
+
     return bool_result, even
 
 
@@ -45,7 +45,7 @@ def true_answer(game_round, name):
 
 def false_answer(name, even):
     # Исполняется, если последний введенный ответ - неправильный
-    if even == True:
+    if even is True:
         print(FALSE_ANSWER_NO.format(name))
     else:
         print(FALSE_ANSWER_YES.format(name))
@@ -68,11 +68,11 @@ def generate_game_round(name):
 
         # Узнаем правильность ответа
         # и в зависимости от нее вызываем функцию
-        if bool_result == True:
+        if bool_result is True:
             user_answer = true_answer(game_round, name)
         else:
             user_answer = false_answer(name, even)
-        
+
         game_round += 1
 
 

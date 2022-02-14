@@ -5,6 +5,11 @@
 - python = "^3.10"
 - prompt = "^0.4.1"
 
+### Description:
+Project 'Brain Games' include 2 games:
+- [X] Brain even  - Answer "yes" if the number is even, otherwise answer "no"
+- [X] Brain calculator - Answer what is the result of the expression?
+
 ### Installation:
 ```
 make build
@@ -14,4 +19,10 @@ make package-install
 
 + Brain even:
 `brain-even`
-[![asciicast](https://asciinema.org/a/6AsTiHa7yyNvtLeilGRXYMhsC.svg)](https://asciinema.org/a/6AsTiHa7yyNvtLeilGRXYMhsC)
+
+[![asciicast](https://asciinema.org/a/B0mMah2NZIrW45W2PkxFahszQ.svg)](https://asciinema.org/a/B0mMah2NZIrW45W2PkxFahszQ)
+
++ Brain calculator:
+`brain-calc`
+
+[![asciicast](https://asciinema.org/a/ZkAz7e25wilITQfKBDLjFrqzk.svg)](https://asciinema.org/a/ZkAz7e25wilITQfKBDLjFrqzk)

@@ -64,11 +64,11 @@ def generate_game_round(name):
 
         # Узнаем правильность ответа
         # и в зависимости от нее вызываем функцию
-        if bool_answer_result == True:
+        if bool_answer_result is True:
             user_answer = true_answer(game_round, name)
         else:
             user_answer = false_answer(user_answer, math_result, name)
-        
+
         game_round += 1
 
 
