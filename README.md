@@ -6,9 +6,10 @@
 - prompt = "^0.4.1"
 
 ### Description:
-Project 'Brain Games' include 2 games:
+Project 'Brain Games' include 3 games:
 - [X] Brain even  - Answer "yes" if the number is even, otherwise answer "no"
 - [X] Brain calculator - Answer what is the result of the expression?
+- [X] Brain gcd - Answer what is the greatest common divisor of given numbers.
 
 ### Installation:
 ```
@@ -17,6 +18,7 @@ make package-install
 ```
 [![asciicast](https://asciinema.org/a/XfptNK9U74OhzxnM7xLAPDCRN.svg)](https://asciinema.org/a/XfptNK9U74OhzxnM7xLAPDCRN)
 
+### Games:
 + Brain even:
 `brain-even`
 
@@ -26,3 +28,8 @@ make package-install
 `brain-calc`
 
 [![asciicast](https://asciinema.org/a/ZkAz7e25wilITQfKBDLjFrqzk.svg)](https://asciinema.org/a/ZkAz7e25wilITQfKBDLjFrqzk)
+
++ Brain gcd:
+`brain-gcd`
+
+[![asciicast](https://asciinema.org/a/MfUOP93EXwHjQCp9pZx8qtJSz.svg)](https://asciinema.org/a/MfUOP93EXwHjQCp9pZx8qtJSz)
