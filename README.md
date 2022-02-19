@@ -6,10 +6,21 @@
 - prompt = "^0.4.1"
 
 ### Description:
-Project 'Brain Games' include 3 games:
+Project 'Brain Games' include five games:
 - [X] Brain even  - Answer "yes" if the number is even, otherwise answer "no"
 - [X] Brain calculator - Answer what is the result of the expression?
 - [X] Brain gcd - Answer what is the greatest common divisor of given numbers.
+- [X] Brain progression - Answer what number is missing in the progression?
+- [X] Brain prime - Answer "yes" if given number is prime, otherwise answer "no".
+
+You can call them with simple commands:
+```bash
+brain-calc
+brain-even
+brain-gcd
+brain-prime
+brain-progresion
+```
 
 ### Installation:
 ```
@@ -34,3 +45,12 @@ make package-install
 
 [![asciicast](https://asciinema.org/a/MfUOP93EXwHjQCp9pZx8qtJSz.svg)](https://asciinema.org/a/MfUOP93EXwHjQCp9pZx8qtJSz)
 
++ Brain progression:
+`brain-progression`
+
+[![asciicast](https://asciinema.org/a/N5pDMigEgLicolbdmKJALi04B.svg)](https://asciinema.org/a/N5pDMigEgLicolbdmKJALi04B)
+
++ Brain prime:
+`brain-prime`
+
+[![asciicast](https://asciinema.org/a/KtIK5g2W0p7zbl2eqJ7OTlcdi.svg)](https://asciinema.org/a/KtIK5g2W0p7zbl2eqJ7OTlcdi)
