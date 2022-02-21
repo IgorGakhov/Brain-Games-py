@@ -1,3 +1,6 @@
+import prompt
+from brain_games.cli import welcome_user
+
 GAME_ATTEMPTS = 3
 TRUE_ANSWER = 'Correct!'
 FALSE_ANSWER = '''\'{}\' is wrong answer ;(. Correct answer was \'{}\'.
@@ -21,15 +24,21 @@ def false_answer(user_answer, target_result, name):
     return False
 
 
-def generate_game_round(name, generate_game_data, answer_is_correct):
+def generate_game_round(game_rules, generate_game_data, answer_is_correct):
+    # Приветствуем пользователя и выводим правила игры
+    name = welcome_user()
+    print(game_rules)
+
     # Формируем логику игры и генерируем цикл раундов
     user_answer = True
     game_round = 1
     while user_answer is True and game_round <= GAME_ATTEMPTS:
-        random_number, user_answer = generate_game_data()
+        random_game_value, computer_question = generate_game_data()
+        print(computer_question)
+        user_answer = prompt.string('Your answer: ')
 
         # Определяем правильный ответ
-        bool_result, target_result = answer_is_correct(random_number,
+        bool_result, target_result = answer_is_correct(random_game_value,
                                                        user_answer)
 
         # Узнаем правильность ответа

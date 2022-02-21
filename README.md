@@ -15,11 +15,11 @@ Project 'Brain Games' include five games:
 
 You can call them with simple commands:
 ```bash
-brain-calc
 brain-even
+brain-calc
 brain-gcd
+brain-progression
 brain-prime
-brain-progresion
 ```
 
 ### Installation:

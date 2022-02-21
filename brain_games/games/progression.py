@@ -1,16 +1,14 @@
-import prompt
 from random import randint
 
-from brain_games.cli import welcome_user
 from brain_games.engine.game_engine import generate_game_round
 
-GAME_RULES_PROGRESSION = 'What number is missing in the progression?'
+GAME_RULES_PRG = 'What number is missing in the progression?'
 
 PROGRESSION_START_VALUE_MIN = 1
 PROGRESSION_START_VALUE_MAX = 50
 
-PROGRESSION_STEP_VALUE_MIN = -20
-PROGRESSION_STEP_VALUE_MAX = 20
+PROGRESSION_STEP_VALUE_MIN = 3
+PROGRESSION_STEP_VALUE_MAX = 30
 
 PROGRESSION_LENGTH_VALUE_MIN = 5
 PROGRESSION_LENGTH_VALUE_MAX = 10
@@ -23,8 +21,12 @@ def generate_game_data():
                           PROGRESSION_START_VALUE_MAX)
     length_value = randint(PROGRESSION_LENGTH_VALUE_MIN,
                            PROGRESSION_LENGTH_VALUE_MAX)
-    step_value = randint(PROGRESSION_STEP_VALUE_MIN,
-                         PROGRESSION_STEP_VALUE_MAX)
+    # Чтобы последовательность могла быть убывающей,
+    # возведем в степень (-1) от 1 до 2 раз в step_value_sign.
+    # Это избавит нас от вероятности нулевого шага при randint(-n, n)
+    step_value_sign = (-1) ** randint(1, 2)
+    step_value = step_value_sign * randint(PROGRESSION_STEP_VALUE_MIN,
+                                           PROGRESSION_STEP_VALUE_MAX)
 
     progression = []
     progression_max_value = start_value + (length_value * step_value)
@@ -36,25 +38,25 @@ def generate_game_data():
     progression[index_skip_value] = '..'
     progression = ' '.join(progression)
 
+    random_game_data = skip_value
     computer_question = '{}'.format(progression)
-    print('Question: {}'.format(str(computer_question)))
-    user_answer = prompt.integer('Your answer: ')
 
-    return skip_value, user_answer
+    return random_game_data, computer_question
 
 
-def answer_is_correct(skip_value, user_answer):
+def answer_is_correct(random_game_data, user_answer):
     # Определяем правильный ответ
+
+    skip_value = random_game_data
+
     target_result = skip_value
-    bool_result = target_result == user_answer
+    bool_result = target_result == int(user_answer)
 
     return bool_result, target_result
 
 
 def run_game():
-    name = welcome_user()
-    print(GAME_RULES_PROGRESSION)
-    generate_game_round(name, generate_game_data, answer_is_correct)
+    generate_game_round(GAME_RULES_PRG, generate_game_data, answer_is_correct)
 
 
 if __name__ == '__main__':
