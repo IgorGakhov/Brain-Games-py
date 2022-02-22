@@ -22,7 +22,7 @@ def generate_game_data():
     length_value = randint(PROGRESSION_LENGTH_VALUE_MIN,
                            PROGRESSION_LENGTH_VALUE_MAX)
     # Чтобы последовательность могла быть убывающей,
-    # возведем в степень (-1) от 1 до 2 раз в step_value_sign.
+    # возведем в степень (-1) от 1 до 2 раз в step_value_sign
     # Это избавит нас от вероятности нулевого шага при randint(-n, n)
     step_value_sign = (-1) ** randint(1, 2)
     step_value = step_value_sign * randint(PROGRESSION_STEP_VALUE_MIN,
@@ -33,6 +33,7 @@ def generate_game_data():
     for i in range(start_value, progression_max_value, step_value):
         progression.append(str(i))
 
+    # Определяем отбрасываемое число и заменяем его двумя точками
     index_skip_value = randint(0, length_value - 1)
     skip_value = int(progression[index_skip_value])
     progression[index_skip_value] = '..'

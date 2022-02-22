@@ -17,10 +17,7 @@ def generate_game_data():
     return random_game_data, computer_question
 
 
-def answer_is_correct(random_game_data, user_answer):
-    # Определяем правильный ответ
-
-    random_number = random_game_data
+def is_even(random_number, user_answer):
 
     if random_number % 2 == 0:
         target_result = 'yes'
@@ -35,6 +32,16 @@ def answer_is_correct(random_game_data, user_answer):
             bool_result = True
         else:
             bool_result = False
+
+    return target_result, bool_result
+
+
+def answer_is_correct(random_game_data, user_answer):
+    # Определяем правильный ответ
+
+    random_number = random_game_data
+
+    target_result, bool_result = is_even(random_number, user_answer)
 
     return bool_result, target_result
 

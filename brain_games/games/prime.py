@@ -17,10 +17,7 @@ def generate_game_data():
     return random_game_data, computer_question
 
 
-def answer_is_correct(random_game_data, user_answer):
-    # Определяем правильный ответ
-
-    random_number = random_game_data
+def is_prime(random_number):
 
     if random_number > 1:
         for i in range(2, int(random_number / 2) + 1):
@@ -32,6 +29,16 @@ def answer_is_correct(random_game_data, user_answer):
 
     else:
         target_result = 'no'
+
+    return target_result
+
+
+def answer_is_correct(random_game_data, user_answer):
+    # Определяем правильный ответ
+
+    random_number = random_game_data
+
+    target_result = is_prime(random_number)
 
     bool_result = target_result == user_answer
 
