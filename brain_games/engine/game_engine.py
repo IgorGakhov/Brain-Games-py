@@ -24,7 +24,7 @@ def false_answer(user_answer, target_result, name):
     return False
 
 
-def generate_game_round(game_rules, generate_game_data, answer_is_correct):
+def run_game(game_rules, generate_game_data, answer_is_correct):
     # Приветствуем пользователя и выводим правила игры
     name = welcome_user()
     print(game_rules)

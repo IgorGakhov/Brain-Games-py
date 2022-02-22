@@ -1,7 +1,7 @@
 import math
 from random import randint
 
-from brain_games.engine.game_engine import generate_game_round
+from brain_games.engine.game_engine import run_game
 
 GAME_RULES_GCD = 'Find the greatest common divisor of given numbers.'
 
@@ -32,9 +32,9 @@ def answer_is_correct(random_game_data, user_answer):
     return bool_result, target_result
 
 
-def run_game():
-    generate_game_round(GAME_RULES_GCD, generate_game_data, answer_is_correct)
+def gcd_game():
+    run_game(GAME_RULES_GCD, generate_game_data, answer_is_correct)
 
 
 if __name__ == '__main__':
-    run_game()
+    gcd_game()

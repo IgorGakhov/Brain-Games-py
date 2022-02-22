@@ -1,6 +1,6 @@
 from random import randint
 
-from brain_games.engine.game_engine import generate_game_round
+from brain_games.engine.game_engine import run_game
 
 GAME_RULES_PRM = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
@@ -38,9 +38,9 @@ def answer_is_correct(random_game_data, user_answer):
     return bool_result, target_result
 
 
-def run_game():
-    generate_game_round(GAME_RULES_PRM, generate_game_data, answer_is_correct)
+def prime_game():
+    run_game(GAME_RULES_PRM, generate_game_data, answer_is_correct)
 
 
 if __name__ == '__main__':
-    run_game()
+    prime_game()
