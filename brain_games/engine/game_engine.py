@@ -42,6 +42,6 @@ def run_game(game_rules, generate_game_data, answer_is_correct):
         if not bool_result:
             false_answer(user_answer, target_result, name)
             break
-        
+
         true_answer(game_round, name)
         game_round += 1
