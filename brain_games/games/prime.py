@@ -12,7 +12,7 @@ def generate_game_data():
     # Генерируем данные и задаем вопрос пользователю
 
     random_game_data = randint(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER)
-    computer_question = 'Question: {}'.format(str(random_game_data))
+    computer_question = '{}'.format(str(random_game_data))
 
     return random_game_data, computer_question
 
@@ -22,13 +22,13 @@ def is_prime(random_number):
     if random_number > 1:
         for i in range(2, int(random_number / 2) + 1):
             if (random_number % i) == 0:
-                target_result = 'no'
+                target_result = False
                 break
         else:
-            target_result = 'yes'
+            target_result = True
 
     else:
-        target_result = 'no'
+        target_result = False
 
     return target_result
 
@@ -38,7 +38,10 @@ def answer_is_correct(random_game_data, user_answer):
 
     random_number = random_game_data
 
-    target_result = is_prime(random_number)
+    if is_prime(random_number) is True:
+        target_result = 'yes'
+    else:
+        target_result = 'no'
 
     bool_result = target_result == user_answer
 

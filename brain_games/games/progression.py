@@ -40,7 +40,7 @@ def generate_game_data():
     progression = ' '.join(progression)
 
     random_game_data = skip_value
-    computer_question = 'Question: {}'.format(progression)
+    computer_question = '{}'.format(progression)
 
     return random_game_data, computer_question
 

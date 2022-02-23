@@ -22,8 +22,8 @@ def generate_game_data():
     operation = choice(ARITHMETIC_OPERATIONS)
 
     random_game_data = [random_number1, random_number2, operation]
-    computer_question = 'Question: {} {} {}'.format(random_number1,
-                                                    operation, random_number2)
+    computer_question = '{} {} {}'.format(random_number1, operation,
+                                          random_number2)
 
     return random_game_data, computer_question
 

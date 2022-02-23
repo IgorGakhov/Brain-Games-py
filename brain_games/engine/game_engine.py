@@ -34,7 +34,7 @@ def run_game(game_rules, generate_game_data, answer_is_correct):
     game_round = 1
     while user_answer is True and game_round <= GAME_ATTEMPTS:
         random_game_value, computer_question = generate_game_data()
-        print(computer_question)
+        print('Question: {}'.format(computer_question))
         user_answer = prompt.string('Your answer: ')
 
         # Определяем правильный ответ
