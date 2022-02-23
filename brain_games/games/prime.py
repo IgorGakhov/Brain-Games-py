@@ -8,15 +8,6 @@ MIN_RANDOM_NUMBER = 1
 MAX_RANDOM_NUMBER = 100
 
 
-def generate_game_data():
-    # Генерируем данные и задаем вопрос пользователю
-
-    random_game_data = randint(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER)
-    computer_question = '{}'.format(str(random_game_data))
-
-    return random_game_data, computer_question
-
-
 def is_prime(random_number):
 
     if random_number > 1:
@@ -33,23 +24,22 @@ def is_prime(random_number):
     return target_result
 
 
-def answer_is_correct(random_game_data, user_answer):
-    # Определяем правильный ответ
+def generate_game_data():
+    # Генерируем данные и задаем вопрос пользователю
 
-    random_number = random_game_data
+    random_number = randint(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER)
+    computer_question = '{}'.format(random_number)
 
     if is_prime(random_number) is True:
         target_result = 'yes'
     else:
         target_result = 'no'
 
-    bool_result = target_result == user_answer
-
-    return bool_result, target_result
+    return computer_question, target_result
 
 
 def prime_game():
-    run_game(GAME_RULES_PRM, generate_game_data, answer_is_correct)
+    run_game(GAME_RULES_PRM, generate_game_data)
 
 
 if __name__ == '__main__':

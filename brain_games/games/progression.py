@@ -35,29 +35,17 @@ def generate_game_data():
 
     # Определяем отбрасываемое число и заменяем его двумя точками
     index_skip_value = randint(0, length_value - 1)
-    skip_value = int(progression[index_skip_value])
+    target_result = progression[index_skip_value]
     progression[index_skip_value] = '..'
     progression = ' '.join(progression)
 
-    random_game_data = skip_value
     computer_question = '{}'.format(progression)
 
-    return random_game_data, computer_question
-
-
-def answer_is_correct(random_game_data, user_answer):
-    # Определяем правильный ответ
-
-    skip_value = random_game_data
-
-    target_result = skip_value
-    bool_result = target_result == int(user_answer)
-
-    return bool_result, target_result
+    return computer_question, target_result
 
 
 def progression_game():
-    run_game(GAME_RULES_PRG, generate_game_data, answer_is_correct)
+    run_game(GAME_RULES_PRG, generate_game_data)
 
 
 if __name__ == '__main__':

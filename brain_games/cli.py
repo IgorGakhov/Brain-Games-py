@@ -7,5 +7,3 @@ def welcome_user():
     welcome_message = 'Hello, {}!'.format(name)
     print(welcome_message)
     return name
-
-# welcome_user()
