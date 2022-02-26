@@ -20,10 +20,10 @@ def generate_game_data():
     computer_question = '{}'.format(random_number)
 
     # Определяем правильный ответ
-    if is_even(random_number) is True:
+    if is_even(random_number):
         target_result = 'yes'
 
-    if is_even(random_number) is False:
+    if not is_even(random_number):
         target_result = 'no'
 
     return computer_question, target_result

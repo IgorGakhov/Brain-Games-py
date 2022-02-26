@@ -24,6 +24,7 @@ def generate_game_data():
                                           random_number2)
 
     # Определяем правильный ответ
+    target_result = False  # Дефолтное значение
     if operation == OPERATION_PLUS:
         target_result = random_number1 + random_number2
     elif operation == OPERATION_MINUS:
