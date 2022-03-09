@@ -22,7 +22,6 @@ def is_prime(random_number):
 
 def generate_game_data():
     # Генерируем данные и задаем вопрос пользователю
-
     random_number = randint(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER)
     computer_question = '{}'.format(random_number)
 

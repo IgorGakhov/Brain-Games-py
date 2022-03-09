@@ -16,7 +16,6 @@ ARITHMETIC_OPERATIONS = [OPERATION_MINUS, OPERATION_PLUS, OPERATION_MULTIPLY]
 
 def generate_game_data():
     # Генерируем данные и задаем вопрос пользователю
-
     random_number1 = randint(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER)
     random_number2 = randint(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER)
     operation = choice(ARITHMETIC_OPERATIONS)

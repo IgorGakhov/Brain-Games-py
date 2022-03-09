@@ -16,11 +16,11 @@ PROGRESSION_LENGTH_VALUE_MAX = 10
 
 def generate_game_data():
     # Генерируем данные и задаем вопрос пользователю
-
     start_value = randint(PROGRESSION_START_VALUE_MIN,
                           PROGRESSION_START_VALUE_MAX)
     length_value = randint(PROGRESSION_LENGTH_VALUE_MIN,
                            PROGRESSION_LENGTH_VALUE_MAX)
+
     # Чтобы последовательность могла быть убывающей,
     # возведем в степень (-1) от 1 до 2 раз в step_value_sign
     # Это избавит нас от вероятности нулевого шага при randint(-n, n)

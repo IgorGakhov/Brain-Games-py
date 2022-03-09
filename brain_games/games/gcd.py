@@ -11,7 +11,6 @@ MAX_RANDOM_NUMBER = 100
 
 def generate_game_data():
     # Генерируем данные и задаем вопрос пользователю
-
     random_number1 = randint(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER)
     random_number2 = randint(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER)
     computer_question = '{} {}'.format(random_number1, random_number2)
