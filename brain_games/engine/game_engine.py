@@ -1,7 +1,9 @@
 import prompt
-from brain_games.cli import welcome_user
 
 GAME_ATTEMPTS = 3
+WELCOME_MESSAGE = 'Welcome to the Brain Games!'
+HELLO_MESSAGE = 'Hello, {}!'
+ASK_NAME_MESSAGE = 'May I have your name? '
 TRUE_ANSWER = 'Correct!'
 FALSE_ANSWER = '''\'{}\' is wrong answer ;(. Correct answer was \'{}\'.
 Let\'s try again, {}!'''
@@ -9,12 +11,15 @@ VICTORY_GAME_MESSAGE = 'Congratulations, {}!'
 
 
 def run_game(game_rules, generate_game_data):
-    # Приветствуем пользователя и выводим правила игры
-    name = welcome_user()
-    print(game_rules)
+    # Приветствуем пользователя
+    print(WELCOME_MESSAGE)
+    name = prompt.string(ASK_NAME_MESSAGE)
+    print(HELLO_MESSAGE.format(name))
 
-    # Формируем логику игры и генерируем цикл раундов
+    # Выводим правила игры, формируем логику игры и генерируем цикл раундов
+    print(game_rules)
     game_round = 1
+
     while game_round <= GAME_ATTEMPTS:
         computer_question, target_result = generate_game_data()
         print('Question: {}'.format(str(computer_question)))

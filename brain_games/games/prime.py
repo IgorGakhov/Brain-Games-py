@@ -36,7 +36,3 @@ def generate_game_data():
 
 def prime_game():
     run_game(GAME_RULES_PRM, generate_game_data)
-
-
-if __name__ == '__main__':
-    prime_game()

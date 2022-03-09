@@ -24,7 +24,3 @@ def generate_game_data():
 
 def gcd_game():
     run_game(GAME_RULES_GCD, generate_game_data)
-
-
-if __name__ == '__main__':
-    gcd_game()

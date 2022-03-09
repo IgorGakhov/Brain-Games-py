@@ -15,15 +15,13 @@ def is_even(random_number):
 
 def generate_game_data():
     # Генерируем данные и задаем вопрос пользователю
-
     random_number = randint(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER)
     computer_question = '{}'.format(random_number)
 
     # Определяем правильный ответ
     if is_even(random_number):
         target_result = 'yes'
-
-    if not is_even(random_number):
+    else:
         target_result = 'no'
 
     return computer_question, target_result
@@ -31,7 +29,3 @@ def generate_game_data():
 
 def even_game():
     run_game(GAME_RULES_EVEN, generate_game_data)
-
-
-if __name__ == '__main__':
-    even_game()

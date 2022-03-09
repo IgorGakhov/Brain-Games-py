@@ -46,7 +46,3 @@ def generate_game_data():
 
 def progression_game():
     run_game(GAME_RULES_PRG, generate_game_data)
-
-
-if __name__ == '__main__':
-    progression_game()

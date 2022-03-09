@@ -37,7 +37,3 @@ def generate_game_data():
 
 def calc_game():
     run_game(GAME_RULES_CALC, generate_game_data)
-
-
-if __name__ == '__main__':
-    calc_game()
