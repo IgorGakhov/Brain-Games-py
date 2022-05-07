@@ -5,8 +5,10 @@
 - python = "^3.9"
 - prompt = "^0.4.1"
 
-### Description:
-Project 'Brain Games' include five games:
+## Description:
+**Brain Games** is a set of five console games built on the principle of popular mobile applications for brain training. Each game asks questions that need to be answered correctly. After three correct answers, the game is considered completed. Incorrect answers end the game and offer to go through it again.
+
+#### Games:
 - [X] Brain even  - Answer "yes" if the number is even, otherwise answer "no"
 - [X] Brain calculator - Answer what is the result of the expression?
 - [X] Brain gcd - Answer what is the greatest common divisor of given numbers.
