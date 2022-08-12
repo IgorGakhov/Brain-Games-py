@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from brain_games.games.prime import prime_game
 
 

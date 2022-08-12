@@ -1,3 +1,5 @@
+from typing import NoReturn
+
 import prompt
 
 GAME_ATTEMPTS = 3
@@ -10,7 +12,7 @@ Let\'s try again, {}!'''
 VICTORY_GAME_MESSAGE = 'Congratulations, {}!'
 
 
-def run_game(game_rules, generate_game_data):
+def run_game(game_rules: str, generate_game_data: tuple) -> NoReturn:
     # Приветствуем пользователя
     print(WELCOME_MESSAGE)
     name = prompt.string(ASK_NAME_MESSAGE)
@@ -22,13 +24,13 @@ def run_game(game_rules, generate_game_data):
 
     while game_round <= GAME_ATTEMPTS:
         computer_question, target_result = generate_game_data()
-        print('Question: {}'.format(str(computer_question)))
+        print(f'Question: {computer_question}')
         user_answer = prompt.string('Your answer: ')
 
         # Узнаем правильность ответа
         bool_result = str(target_result) == user_answer.lower()
 
-        # ...и в зависимости от выбора ответа вызываем функцию
+        # ... и в зависимости от выбора ответа вызываем функцию
         if not bool_result:
             # Исполняется, если последний введенный ответ - неправильный
             print(FALSE_ANSWER.format(user_answer, target_result, name))

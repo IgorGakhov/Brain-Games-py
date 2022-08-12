@@ -1,4 +1,5 @@
 from random import randint, choice
+from typing import Callable
 
 from brain_games.engine.game_engine import run_game
 
@@ -11,16 +12,15 @@ OPERATION_PLUS = '+'
 OPERATION_MINUS = '-'
 OPERATION_MULTIPLY = '*'
 
-ARITHMETIC_OPERATIONS = [OPERATION_MINUS, OPERATION_PLUS, OPERATION_MULTIPLY]
+ARITHMETIC_OPERATIONS = (OPERATION_MINUS, OPERATION_PLUS, OPERATION_MULTIPLY)
 
 
-def generate_game_data():
+def generate_game_data() -> tuple:
     # Генерируем данные и задаем вопрос пользователю
     random_number1 = randint(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER)
     random_number2 = randint(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER)
     operation = choice(ARITHMETIC_OPERATIONS)
-    computer_question = '{} {} {}'.format(random_number1, operation,
-                                          random_number2)
+    computer_question = f'{random_number1} {operation} {random_number2}'
 
     # Определяем правильный ответ
     target_result = False  # Дефолтное значение
@@ -34,5 +34,5 @@ def generate_game_data():
     return computer_question, target_result
 
 
-def calc_game():
+def calc_game() -> Callable:
     run_game(GAME_RULES_CALC, generate_game_data)

@@ -1,4 +1,5 @@
 from random import randint
+from typing import Callable
 
 from brain_games.engine.game_engine import run_game
 
@@ -8,7 +9,7 @@ MIN_RANDOM_NUMBER = 1
 MAX_RANDOM_NUMBER = 100
 
 
-def is_prime(random_number):
+def is_prime(random_number) -> bool:
 
     if random_number <= 1:
         return False
@@ -20,18 +21,15 @@ def is_prime(random_number):
     return True
 
 
-def generate_game_data():
+def generate_game_data() -> tuple:
     # Генерируем данные и задаем вопрос пользователю
     random_number = randint(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER)
-    computer_question = '{}'.format(random_number)
+    computer_question = f'{random_number}'
 
-    if is_prime(random_number):
-        target_result = 'yes'
-    else:
-        target_result = 'no'
+    target_result = 'yes' if is_prime(random_number) else 'no'
 
     return computer_question, target_result
 
 
-def prime_game():
+def prime_game() -> Callable:
     run_game(GAME_RULES_PRM, generate_game_data)
